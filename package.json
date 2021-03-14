@@ -11,10 +11,12 @@
   "author": "nekogochan",
   "license": "ISC",
   "dependencies": {
+    "chart.js": "^2.9.4",
     "neko-tests": "^0.2.6",
     "neko-utils": "^0.0.5",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "tridiagonal-solve": "^1.0.4"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",

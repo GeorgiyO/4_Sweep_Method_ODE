@@ -1,5 +1,8 @@
 const React = require("react");
 
+const {Table} = require("./Table");
+const {Graph} = require("./Graph");
+
 export class ResultPanel extends React.Component {
 
     constructor(props) {
@@ -8,9 +11,11 @@ export class ResultPanel extends React.Component {
     }
 
     render() {
+        let _ = this.props.globalState;
         return (
-            <div>
-
+            <div className={"ResultPanel"}>
+                <Graph globalState={_}/>
+                <Table globalState={_}/>
             </div>
         );
     }

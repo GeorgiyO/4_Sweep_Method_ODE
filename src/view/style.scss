@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Red+Rose:wght@700&display=swap');
 
+$inputPanelWidth: 200px;
+$inputPanelRightMargin: 25px;
+$blockWidth: 60px;
+
 %font {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 1.25rem;
@@ -9,7 +13,7 @@
 body {
   @extend %font;
   margin: 0;
-  padding: 0;
+  padding: 10px;
 }
 
 input {
@@ -25,61 +29,60 @@ button {
   padding: 5px;
 }
 
-@media screen and (max-width: 1400px) {
-  .Root {
-    flex-direction: column;
-    align-items: center;
-  }
-}
 
-@media not screen and (max-width: 1400px) {
-  .Root {
-    flex-direction: row;
-    align-items: stretch;
-  }
-}
 
 .Root {
-  display: flex;
-  justify-content: center;
 
-  >* {
-    margin: 30px;
-  }
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 
   .InputPanel {
+    width: $inputPanelWidth;
+    margin-right: $inputPanelRightMargin;
+
+    div {
+      display: flex;
+      justify-content: space-around;
+      margin: 10px;
+      width: 100%;
+
+      span {
+        display: inline-block;
+        margin-right: 15px;
+      }
+
+      input {
+        display: inline-block;
+        width: 150px;
+      }
+    }
+  }
+
+  .ResultPanel {
+
     display: flex;
     flex-direction: column;
 
-    button {
-      width: 100%;
-    }
+    width: calc(100% - #{$inputPanelWidth + $inputPanelRightMargin});
 
-    .Hint {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-    }
-
-    .InequalitiesInputs {
+    .Table {
       display: flex;
       flex-direction: column;
-      align-items: center;
 
       .Row {
-        display: flex;
-        flex-direction: row;
-        align-items: stretch;
-      }
-    }
+        margin-bottom: 20px;
 
-    .TargetFooInputs {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
+        div {
+          display: inline-block;
+          width: $blockWidth;
+        }
 
-      * {
-        flex-grow: 1;
+        .Header {
+          font-weight: 400;
+          padding-right: 10px;
+          text-align: end;
+        }
       }
     }
   }
